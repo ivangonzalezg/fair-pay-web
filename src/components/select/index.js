@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Select as NBSelect } from "native-base";
 
 const Select = (props) => {
-  const { items, onChange, value, placeholder } = props;
+  const { items, onChange, value, placeholder, ...rest } = props;
 
   const label = useMemo(() => items?.find((item) => item.value === value)?.label, [items, value]);
 
@@ -14,7 +14,14 @@ const Select = (props) => {
   }, [label, value, onChange]);
 
   return (
-    <NBSelect placeholder={placeholder} selectedValue={value} onValueChange={onChange} backgroundColor="white" size="md">
+    <NBSelect
+      placeholder={placeholder}
+      selectedValue={value}
+      onValueChange={onChange}
+      backgroundColor="white"
+      size="md"
+      {...rest}
+    >
       {items
         .sort((item1, item2) => item1.label.localeCompare(item2.label))
         .map(({ label, value }) => (
