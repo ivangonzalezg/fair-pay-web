@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from "react";
-import { Text, VStack } from "native-base";
+import { Button, Text, VStack } from "native-base";
 import Heading from "../../components/heading";
 import Members from "./components/members";
 import Orders from "./components/orders";
@@ -101,6 +101,12 @@ function HomePage() {
     [orders]
   );
 
+  const onReset = useCallback(() => {
+    setStep(steps.MEMBERS);
+    setMembers([]);
+    setOrders([]);
+  }, []);
+
   return (
     <VStack safeArea paddingX={2} paddingY={2} overflowY="scroll" maxWidth={700} alignSelf="center" width="full">
       <Text bold fontSize="2xl" textAlign="center" marginBottom={3}>
@@ -134,6 +140,9 @@ function HomePage() {
         disabled={disabledCheckout}
       />
       <Checkout visible={step === steps.CHECKOUT} members={members} orders={orders} />
+      <Button flex={1} onPress={onReset} colorScheme="rose" marginTop={5}>
+        Reset
+      </Button>
     </VStack>
   );
 }
