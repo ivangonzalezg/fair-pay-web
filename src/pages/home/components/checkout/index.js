@@ -83,7 +83,7 @@ const Checkout = (props) => {
             <Input
               size="md"
               value={tip}
-              onChangeText={setTip}
+              onChangeText={(text) => setTip(text?.replace(/[^0-9]/g, ""))}
               placeholder="Tip"
               keyboardType="number-pad"
               rightElement={<MdPercent size={20} color="black" />}
