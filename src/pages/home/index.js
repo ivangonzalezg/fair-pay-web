@@ -3,6 +3,7 @@ import { Text, VStack } from "native-base";
 import Heading from "../../components/heading";
 import Members from "./components/members";
 import Orders from "./components/orders";
+import Checkout from "./components/checkout";
 
 const steps = {
   MEMBERS: 0,
@@ -108,6 +109,7 @@ function HomePage() {
         onNext={() => setStep(steps.CHECKOUT)}
       />
       <Heading label="Checkout" isOpen={step === steps.CHECKOUT} onPress={() => setStep(steps.CHECKOUT)} />
+      <Checkout visible={step === steps.CHECKOUT} members={members} orders={orders} />
     </VStack>
   );
 }
