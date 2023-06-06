@@ -48,6 +48,7 @@ Members.propTypes = {
   onUpdateMember: PropTypes.func.isRequired,
   onRemoveMember: PropTypes.func.isRequired,
   onNext: PropTypes.func.isRequired,
+  nextDisabled: PropTypes.bool.isRequired,
 };
 
 export default React.memo(Members);
