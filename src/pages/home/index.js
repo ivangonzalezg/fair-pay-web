@@ -30,8 +30,18 @@ function HomePage() {
       let _members = [...members];
       _members = _members.filter((_member) => _member.id !== id);
       setMembers(_members);
+      if (orders.some((order) => order.member === id)) {
+        let _orders = [...orders];
+        _orders = _orders.map((_order) => {
+          if (_order.member === id) {
+            _order.member = "";
+          }
+          return _order;
+        });
+        setOrders(_orders);
+      }
     },
-    [members]
+    [members, orders]
   );
 
   const onUpdateMember = useCallback(
