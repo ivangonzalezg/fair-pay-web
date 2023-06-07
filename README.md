@@ -1,3 +1,33 @@
+# FairPay App
+
+## Installation
+
+1. Clone the repository to your local machine:
+
+```console
+git clone https://github.com/ivangonzalezg/fair-pay-web.git
+```
+
+2. Navigate to the project directory:
+
+```console
+cd fair-pay-app
+```
+
+3. Install the dependencies:
+
+```console
+yarn
+```
+
+## Running
+
+1. To run the web app, in the project directory, run the following command:
+
+```console
+yarn start
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
